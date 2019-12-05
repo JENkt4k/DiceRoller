@@ -17,6 +17,14 @@ pipeline {
           }
         }       
       }
+      post {
+        always {
+            dir('/app/build/reports/') {
+               junit '*.xml'
+               junit '*.html'
+            }
+        }
+      }
     }
     stage('debug'){
       steps{
@@ -28,6 +36,13 @@ pipeline {
             echo "Debug failed"
           }
         }       
+      }
+      post {
+        always {
+            dir('/app/build/reports/') {
+               junit 'tests/testDebugUnitTest/*.html'
+            }
+        }
       }
     }
     stage('release'){
@@ -41,16 +56,13 @@ pipeline {
           }
         }       
       }
-    }
-    post {
+      post {
         always {
             dir('/app/build/reports/') {
                junit 'tests/testReleaseUnitTest/*.html'
-               junit 'tests/testDebugUnitTest/*.html'
-               junit '*.xml'
-               junit '*.html'
             }
         }
       }
+    }
   }
 } 
