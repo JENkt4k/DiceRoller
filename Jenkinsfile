@@ -78,22 +78,22 @@ pipeline {
         
     }
   }
-  post {
-          always {            
-            junit 'app/build/test-results/**/*.xml'
-            androidLint canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'app/build/reports/**/*', unHealthy: ''
-            archiveArtifacts 'app/build/outputs/apk/*'
-          }
-        }
-        cleanup{
-          script {
-            try {
-              deleteDir('app/build/test-results/')
-            } catch (Exception e) {
-              echo e.getMessage()
-              echo "deleteDir failed"
-            }
-          }
-        }
+}
+post {
+  always {            
+    junit 'app/build/test-results/**/*.xml'
+    androidLint canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'app/build/reports/**/*', unHealthy: ''
+    archiveArtifacts 'app/build/outputs/apk/*'
+  }
+}
+cleanup{
+    script {
+      try {
+        deleteDir('app/build/test-results/')
+      } catch (Exception e) {
+        echo e.getMessage()
+        echo "deleteDir failed"
       }
+    }
+  }
 } 
