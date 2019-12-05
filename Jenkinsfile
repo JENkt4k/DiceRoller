@@ -19,34 +19,16 @@ pipeline {
       }
       post {
         always {
-            junit 'app/build/reports/**/*.xml'
+            archiveArtifacts 'app/build/reports/**/*.xml'
+            archiveArtifacts 'app/build/reports/**/*.html'
         }
       }
     }
-    stage('debug'){
+    stage('test'){
       steps{
         script {
           try {
-            sh './gradlew testDebugUnitTest'
-          } catch (Exception e) {
-            echo e.getMessage()
-            echo "Debug failed"
-          }
-        }       
-      }
-      post {
-        always {
-            dir('/app/build/reports/') {
-               junit 'tests/testDebugUnitTest/*.html'
-            }
-        }
-      }
-    }
-    stage('release'){
-      steps{
-        script {
-          try {
-            sh './gradlew testReleaseUnitTest'
+            sh './gradlew test'
           } catch (Exception e) {
             echo e.getMessage()
             echo "Release failed"
@@ -56,7 +38,7 @@ pipeline {
       post {
         always {
             dir('/app/build/reports/') {
-               junit 'tests/testReleaseUnitTest/*.html'
+               archiveArtifacts  'tests/**/*.html'
             }
         }
       }
