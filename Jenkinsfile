@@ -71,6 +71,9 @@ pipeline {
       }   
     }
     }
+    stage('createAPK'){
+      sh './gradlew assembleRelease'
+    }
     post {
         always {
           archiveArtifacts 'app/build/outputs/apk/*'
