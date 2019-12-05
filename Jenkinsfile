@@ -74,8 +74,7 @@ pipeline {
     }
     stage('createAPK'){
       steps{
-        sh './gradlew assembleRelease'
-        
+      sh './gradlew assembleRelease'  
     }
   }
 }
