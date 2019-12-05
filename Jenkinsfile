@@ -21,6 +21,7 @@ pipeline {
         always {
             archiveArtifacts 'app/build/reports/**/*.xml'
             archiveArtifacts 'app/build/reports/**/*.html'
+            androidLint canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'app/build/reports/**/*', unHealthy: ''
         }
       }
     }
@@ -37,7 +38,7 @@ pipeline {
       }
       post {
         always {
-          archiveArtifacts 'app/build/reports/tests/**/*'
+          junit 'app/build/reports/tests/**/*.xml'
         }
       }
     }
