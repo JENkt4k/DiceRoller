@@ -24,5 +24,41 @@ pipeline {
         }
       }
     }
+    stage('debug'){
+      steps{
+        script {
+          try {
+            sh './gradlew testDebugUnitTest'
+          } catch (Exception e) {
+            echo e.getMessage()
+            echo "Debug failed"
+          }
+        }       
+      }
+    }
+    stage('release'){
+      steps{
+        script {
+          try {
+            sh './gradlew testReleaseUnitTest'
+          } catch (Exception e) {
+            echo e.getMessage()
+            echo "Release failed"
+          }
+        }       
+      }
+    }
+    stage('PublishJuint'){
+      steps{
+        sh 'ls app/build/test-results/'
+      }
+      post {
+        always {
+          archiveArtifacts 'app/build/reports/**/*'
+          archiveArtifacts 'app/build/test-results/**/*'
+          junit 'app/build/test-results/**/*.xml'
+        }
+      }
+    }
   }
 } 
