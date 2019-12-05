@@ -75,7 +75,10 @@ pipeline {
     stage('createAPK'){
       steps{
         sh './gradlew assembleRelease'
-        post {
+        
+    }
+  }
+  post {
           always {            
             junit 'app/build/test-results/**/*.xml'
             androidLint canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'app/build/reports/**/*', unHealthy: ''
@@ -93,6 +96,4 @@ pipeline {
           }
         }
       }
-    }
-  }
 } 
