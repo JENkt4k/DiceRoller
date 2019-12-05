@@ -73,6 +73,7 @@ pipeline {
     }
     }
     stage('createAPK'){
+      steps{
       sh './gradlew assembleRelease'
     post {
         always {
@@ -90,6 +91,7 @@ pipeline {
           }
         }
         }
+      }
       }
     }
   }
