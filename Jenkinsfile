@@ -22,7 +22,7 @@ pipeline {
       steps{
         script {
           try {
-            sh './gradlew tasks'
+            sh './gradlew tasks --all'
           } catch (Exception e) {
             echo e.getMessage()
             echo "Debug failed"
