@@ -22,44 +22,6 @@ pipeline {
             junit 'app/build/reports/**/*.xml'
         }
       }
-    }
-    stage('debug'){
-      steps{
-        script {
-          try {
-            sh './gradlew testDebugUnitTest'
-          } catch (Exception e) {
-            echo e.getMessage()
-            echo "Debug failed"
-          }
-        }       
-      }
-      post {
-        always {
-            dir('/app/build/reports/') {
-               junit 'tests/testDebugUnitTest/*.html'
-            }
-        }
-      }
-    }
-    stage('release'){
-      steps{
-        script {
-          try {
-            sh './gradlew testReleaseUnitTest'
-          } catch (Exception e) {
-            echo e.getMessage()
-            echo "Release failed"
-          }
-        }       
-      }
-      post {
-        always {
-            dir('/app/build/reports/') {
-               junit 'tests/testReleaseUnitTest/*.html'
-            }
-        }
-      }
-    }
+    }  
   }
 } 
