@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'openjdk:8' } }
+  agent { docker { image 'circleci/android' } }
   stages {
     stage('build') {
       steps {
