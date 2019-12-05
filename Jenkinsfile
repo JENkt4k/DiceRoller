@@ -42,5 +42,15 @@ pipeline {
         }       
       }
     }
+    post {
+        always {
+            dir('/app/build/reports/') {
+               junit 'tests/testReleaseUnitTest/*.html'
+               junit 'tests/testDebugUnitTest/*.html'
+               junit '*.xml'
+               junit '*.html'
+            }
+        }
+      }
   }
 } 
