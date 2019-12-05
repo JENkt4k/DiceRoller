@@ -8,19 +8,6 @@ pipeline {
     }
     stage('Lint and Unit Test'){
       parallel {
-        stage('check'){
-          steps{
-            script {
-              try {
-                sh './gradlew check'
-              } catch (Exception e) {
-                echo e.getMessage()
-                echo "Lint failed"
-              }
-            }       
-          }
-          
-        }
         stage('lint'){
           steps{
             script {
@@ -32,7 +19,6 @@ pipeline {
               }
             }       
           }
-          
         }
         stage('test'){
           steps{
@@ -42,30 +28,6 @@ pipeline {
               } catch (Exception e) {
                 echo e.getMessage()
                 echo "test failed"
-              }
-            }       
-          }   
-        }
-        stage('testDebugUnitTest'){
-          steps{
-            script {
-              try {
-                sh './gradlew testDebugUnitTest'
-              } catch (Exception e) {
-                echo e.getMessage()
-                echo "testDebugUnitTest failed"
-              }
-            }       
-          }   
-        }
-        stage('testReleaseUnitTest'){
-          steps{
-            script {
-              try {
-                sh './gradlew testReleaseUnitTest'
-              } catch (Exception e) {
-                echo e.getMessage()
-                echo "testReleaseUnitTest failed"
               }
             }       
           }   
