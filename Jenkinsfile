@@ -81,14 +81,14 @@ pipeline {
             junit 'app/build/test-results/**/*.xml'
             androidLint canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'app/build/reports/**/*', unHealthy: ''
           }
-          cleanup{
-            script {
-              try {
-                deleteDir('app/build/test-results/')
-              } catch (Exception e) {
-                echo e.getMessage()
-                echo "deleteDir failed"
-              }
+        }
+        cleanup{
+          script {
+            try {
+              deleteDir('app/build/test-results/')
+            } catch (Exception e) {
+              echo e.getMessage()
+              echo "deleteDir failed"
             }
           }
         }
