@@ -6,5 +6,41 @@ pipeline {
           sh './gradlew --no-daemon'
       }
     }
+    stage('lint'){
+      steps{
+        script {
+          try {
+            sh './gradlew lint'
+          } catch (Exception e) {
+            echo e.getMessage()
+            echo "Lint failed"
+          }
+        }       
+      }
+    }
+    stage('debug'){
+      steps{
+        script {
+          try {
+            sh './gradlew check'
+          } catch (Exception e) {
+            echo e.getMessage()
+            echo "Debug failed"
+          }
+        }       
+      }
+    }
+    stage('release'){
+      steps{
+        script {
+          try {
+            sh './gradlew check'
+          } catch (Exception e) {
+            echo e.getMessage()
+            echo "Release failed"
+          }
+        }       
+      }
+    }
   }
 } 
