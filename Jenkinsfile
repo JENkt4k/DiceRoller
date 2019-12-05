@@ -22,7 +22,7 @@ pipeline {
       steps{
         script {
           try {
-            sh './gradlew check'
+            sh './gradlew test'
           } catch (Exception e) {
             echo e.getMessage()
             echo "Debug failed"
@@ -34,7 +34,7 @@ pipeline {
       steps{
         script {
           try {
-            sh './gradlew check'
+            sh './gradlew test'
           } catch (Exception e) {
             echo e.getMessage()
             echo "Release failed"
