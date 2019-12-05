@@ -37,9 +37,7 @@ pipeline {
       }
       post {
         always {
-            dir('/app/build/reports/') {
-               archiveArtifacts  'tests/**/*.html'
-            }
+          archiveArtifacts 'app/build/reports/tests/**/*'
         }
       }
     }
