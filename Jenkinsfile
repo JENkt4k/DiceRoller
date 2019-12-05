@@ -53,7 +53,7 @@ pipeline {
             sh './gradlew testStagingDebug'
           } catch (Exception e) {
             echo e.getMessage()
-            echo "test failed"
+            echo "testStagingDebug failed"
           }
         }       
       }   
@@ -65,7 +65,7 @@ pipeline {
             sh './gradlew testReleaseDebug'
           } catch (Exception e) {
             echo e.getMessage()
-            echo "test failed"
+            echo "testReleaseDebug failed"
           }
         }       
       }   
@@ -75,6 +75,14 @@ pipeline {
         always {
           junit 'app/build/test-results/**/*.xml'
           androidLint canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'app/build/reports/**/*', unHealthy: ''
+        }
+        script {
+          try {
+            deleteDir('app/build/test-results/')
+          } catch (Exception e) {
+            echo e.getMessage()
+            echo "deleteDir failed"
+          }
         }
       }
     }
