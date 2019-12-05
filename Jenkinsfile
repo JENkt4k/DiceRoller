@@ -3,9 +3,6 @@ pipeline {
   stages {
     stage('build') {
       steps {
-          sh 'pwd'
-          sh 'ls'
-          sh 'ls'
           sh './gradlew --no-daemon'
       }
     }
