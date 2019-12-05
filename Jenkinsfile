@@ -71,6 +71,7 @@ pipeline {
       }   
     }
     }
+    }
     stage('createAPK'){
       sh './gradlew assembleRelease'
     }
