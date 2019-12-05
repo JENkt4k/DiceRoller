@@ -46,26 +46,26 @@ pipeline {
         }       
       }   
     }
-    stage('testStagingDebug'){
+    stage('testDebugUnitTest'){
       steps{
         script {
           try {
-            sh './gradlew testStagingDebug'
+            sh './gradlew testDebugUnitTest'
           } catch (Exception e) {
             echo e.getMessage()
-            echo "testStagingDebug failed"
+            echo "testDebugUnitTest failed"
           }
         }       
       }   
     }
-    stage('testReleaseDebug'){
+    stage('testReleaseUnitTest'){
       steps{
         script {
           try {
-            sh './gradlew testReleaseDebug'
+            sh './gradlew testReleaseUnitTest'
           } catch (Exception e) {
             echo e.getMessage()
-            echo "testReleaseDebug failed"
+            echo "testReleaseUnitTest failed"
           }
         }       
       }   
