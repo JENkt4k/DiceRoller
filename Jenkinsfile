@@ -10,7 +10,7 @@ pipeline {
       steps{
         script {
           try {
-            sh './gradlew lint'
+            sh './gradlew check'
           } catch (Exception e) {
             echo e.getMessage()
             echo "Lint failed"
@@ -19,10 +19,7 @@ pipeline {
       }
       post {
         always {
-            dir('/app/build/reports/') {
-               junit '*.xml'
-               junit '*.html'
-            }
+            junit 'app/build/reports/**/*.xml'
         }
       }
     }
