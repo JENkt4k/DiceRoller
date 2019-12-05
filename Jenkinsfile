@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-          sh './gradlew --no-daemon'
+          sh './gradlew'
       }
     }
     stage('lint'){
@@ -28,6 +28,7 @@ pipeline {
       steps{
         script {
           try {
+            sh './gradlew test'
             sh './gradlew testDebugUnitTest'
           } catch (Exception e) {
             echo e.getMessage()
