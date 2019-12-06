@@ -4,13 +4,9 @@ pipeline {
     stage('find_anddroid'){
       steps{
         sh 'find -iname android'
+        echo 'find -iname android'
       }
     }
-    stage('adb'){
-      steps{
-        sh 'adb devices'
-      }
-    } 
     stage('adb_connect'){
       steps{
         sh 'find -iname android'
