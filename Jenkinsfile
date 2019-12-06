@@ -10,7 +10,12 @@ pipeline {
       steps{
         sh 'adb devices'
       }
-    }
+    } 
+    stage('adb'){
+      steps{
+        sh 'adb connect 192.168.1.36:5555'
+      }
+    } 
     stage('build') {
       steps {
           sh './gradlew'
