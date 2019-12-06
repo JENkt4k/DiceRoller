@@ -2,10 +2,14 @@ pipeline {
   agent { docker { image 'circleci/android:api-29-node' } }
   stages {
     stage('find_adb'){
-      sh 'find adb'
+      steps{
+        sh 'find adb'
+      }
     }
     stage('adb'){
-      sh 'adb devices'
+      steps{
+        sh 'adb devices'
+      }
     }
     stage('build') {
       steps {
