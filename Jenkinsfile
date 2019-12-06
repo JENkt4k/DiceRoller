@@ -45,6 +45,7 @@ pipeline {
       junit 'app/build/test-results/**/*.xml'
       androidLint canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'app/build/reports/**/*', unHealthy: ''
       archiveArtifacts 'app/build/outputs/apk/**/*.apk'
+      deleteDir('app/build/test-results')
     }
   }
 } 
