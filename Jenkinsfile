@@ -11,8 +11,10 @@ pipeline {
         sh 'adb devices'
       }
     } 
-    stage('adb'){
+    stage('adb_connect'){
       steps{
+        sh 'find -iname android'
+        sh 'adb devices'
         sh 'adb connect 192.168.1.36:5555'
       }
     } 
