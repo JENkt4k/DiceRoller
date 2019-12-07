@@ -2,7 +2,6 @@ pipeline {
   agent { 
     docker {
        image 'circleci/android:api-29-node' 
-       args '-p 5555:5555'
     }
   }
   stages {
