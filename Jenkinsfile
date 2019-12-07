@@ -12,7 +12,7 @@ pipeline {
     }
     stage('build') {
       steps {
-          sh './gradlew'
+          sh './gradlew build'
       }
     }
     stage('Lint and Unit Test'){
