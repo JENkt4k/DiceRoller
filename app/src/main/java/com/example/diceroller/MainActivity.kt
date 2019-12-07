@@ -23,13 +23,26 @@ class MainActivity : AppCompatActivity() {
             rollDice()
         }
 
+        var defaultImage = resources.getString(R.string.DiceValue)
         diceImage = findViewById(R.id.dice_image)
-        diceImage.setImageResource(R.drawable.dice_1)
+        diceImage.setImageResource(getDiceResource(defaultImage.toInt()))
+    }
+
+    private inline fun getDiceResource(resrouce:Int) :Int{
+        return when (resrouce){
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            6 -> R.drawable.dice_6
+            else -> R.drawable.dice_6
+        }
     }
 
     private fun rollDice() {
 
-        val randomInt = Random.nextInt(6)+1
+/*        val randomInt = Random.nextInt(6)+1
         val drawableResource =  when (randomInt){
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
@@ -39,8 +52,8 @@ class MainActivity : AppCompatActivity() {
             6 -> R.drawable.dice_6
             else -> R.drawable.dice_6
 
-        }
-        diceImage.setImageResource(drawableResource)
+        }*/
+        diceImage.setImageResource(getDiceResource(Random.nextInt(6)+1))
 
     }
 
