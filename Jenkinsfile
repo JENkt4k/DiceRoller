@@ -5,7 +5,7 @@ pipeline {
     }
   }
   stages {
-    stage('build') {
+    stage('clean') {
       steps {
           sh './gradlew clean'  
       }
