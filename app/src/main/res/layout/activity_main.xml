@@ -14,12 +14,14 @@
             app:srcCompat="@drawable/empty_dice"
             tools:srcCompat="@drawable/dice_1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:contentDescription="Animated Dice Rolling Image"/>
 
     <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/roll" android:id="@+id/roll_button"/>
+            android:text="@string/roll" android:id="@+id/roll_button"
+            android:contentDescription="Roll Button"/>
 
 </LinearLayout>
