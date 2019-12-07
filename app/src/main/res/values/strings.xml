@@ -2,4 +2,6 @@
     <string name="app_name">Dice Roller</string>
     <string name="roll">Roll</string>
     <string name="DiceValue">1</string>
+    <string name="DiceImageContentDescription">Animated Dice Rolling Image</string>
+    <string name="RollButtonContentDescription">Roll Button</string>
 </resources>
