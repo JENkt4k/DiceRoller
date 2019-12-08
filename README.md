@@ -7,7 +7,7 @@ OS: Windows 10 x64
 
 Computer: Acer Predator Helios 500 i7 Intel, Nvidia GTX 1070, 64 GB Ram, 2.5 TB SSD (1.5) and HDD (1)
 
-Tools: [Docker Desktop](https://www.docker.com/products/docker-desktop), [Kubernetes](https://kubernetes.io/) (installed via [Docker Desktop](https://collabnix.com/kubernetes-dashboard-on-docker-desktop-for-windows-2-0-0-3-in-2-minutes/)), docker-compose [Jenkins/BlueOcean](https://hub.docker.com/r/jenkinsci/blueocean) Docker container, [CirclCI/Android-29-node](https://hub.docker.com/r/circleci/android) [Docker container](https://circleci.com/docs/2.0/circleci-images/)
+Tools: [Docker Desktop](https://www.docker.com/products/docker-desktop), [Kubernetes](https://kubernetes.io/) (installed via [Docker Desktop](https://collabnix.com/kubernetes-dashboard-on-docker-desktop-for-windows-2-0-0-3-in-2-minutes/)), docker-compose [Jenkins/BlueOcean](https://hub.docker.com/r/jenkinsci/blueocean) Docker container, [CirclCI/Android-29-node](https://hub.docker.com/r/circleci/android) [Docker container](https://circleci.com/docs/2.0/circleci-images/), [GOGs](https://gogs.io/) for [private git server on a RaspberryPi 3](https://www.techcoil.com/blog/setting-up-your-own-raspberry-pi-3-git-server-with-go-git-service-gogs-and-raspbian-stretch-lite/)
 
 Other Images:
 - [jenkins/blueocean](https://hub.docker.com/r/jenkins/blueocean)
