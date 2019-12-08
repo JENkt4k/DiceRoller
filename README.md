@@ -14,7 +14,7 @@ Other Images:
 - [circleci/android-29](https://hub.docker.com/r/circleci/android)
 
 Jenkins plugins:
-- Android Lint
+- [Android Lint](https://wiki.jenkins.io/display/JENKINS/Android+Lint+Plugin)
 - Jenkins Lint
 
 
@@ -46,3 +46,5 @@ kubectl proxy
 [Another RaspberryPi 3 tut](https://pimylifeup.com/raspberry-pi-gogs/)
 
 [Another RaspberryPi 3 tut](https://dev.to/_lunacy_/private-github-with-gogs-and-raspberry-pi-46m3)
+
+[Docker Jenkins Pipeline](https://medium.com/@hakdogan/an-end-to-end-tutorial-to-continuous-integration-and-continuous-delivery-by-dockerize-jenkins-f5b9b45b610d)
