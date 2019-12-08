@@ -30,7 +30,11 @@ kubectl proxy
 
 [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/docker/)
 
-[Run an Android emulator on docker](https://medium.com/@AndreSand/android-emulator-on-docker-container-f20c49b129ef)
+[Building an Android app with Docker](https://medium.com/@AndreSand/building-android-with-docker-8dbf717f54d4)
+
+[Kotlin on Docker](https://blog.baens.net/posts/step-by-step-kotlin/)
+
+[Run an Android emulator on Docker](https://medium.com/@AndreSand/android-emulator-on-docker-container-f20c49b129ef)
 
 [Android Docker Images from CircleCI](https://github.com/CircleCI-Public/circleci-dockerfiles)
 - running Android emulator in [CircleCI](https://fovea.cc/blog/index.php/circleci-calabash/) 
