@@ -47,4 +47,6 @@ kubectl proxy
 
 [Another RaspberryPi 3 tut](https://dev.to/_lunacy_/private-github-with-gogs-and-raspberry-pi-46m3)
 
+[Another RaspberryPi 3 tut](https://dev.to/_lunacy_/private-github-with-gogs-and-raspberry-pi-46m3)
+
 [Docker Jenkins Pipeline](https://medium.com/@hakdogan/an-end-to-end-tutorial-to-continuous-integration-and-continuous-delivery-by-dockerize-jenkins-f5b9b45b610d)
