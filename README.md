@@ -1,6 +1,6 @@
 # DiceRoller Android Jenkins Pipeline Example
 
-This project is an example project taken from the the Udacity [Google Android Fundementals course](https://www.udacity.com/course/new-android-fundamentals). Modifications inlcude a Jenkinsfile for a CICD pipeline as wells as examples of how to install, configure, create and deploy multiple packages from multiple languages using Kubernetes, Docker, Jenkins, Andoird Lint, and eventually other tools (ex: SonarQube, Appium, etc.)
+This project is an example project taken from the the Udacity [Google Android Fundementals course](https://www.udacity.com/course/new-android-fundamentals). Modifications inlcude a Jenkinsfile for a CICD pipeline as wells as examples of how to install, configure, create and deploy multiple packages from multiple languages using Kubernetes, Docker, Jenkins, Andoird Lint, SonarQube and eventually other tools (ex: Appium, etc.)
 
 ## Windows configuration
 OS: Windows 10 x64
